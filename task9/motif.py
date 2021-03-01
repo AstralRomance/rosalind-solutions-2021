@@ -1,3 +1,6 @@
+# TASK 9
+# http://rosalind.info/problems/subs/
+
 import re
 
 st1, st2 = '', ''

@@ -1,5 +1,5 @@
 # TASK 8
-# 
+# http://rosalind.info/problems/prot/
 
 codon_table = {
     'UUU': 'F', 'CUU': 'L', 'AUU': 'I', 'GUU': 'V',
