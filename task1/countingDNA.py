@@ -1,4 +1,4 @@
-#TASK 1
+# TASK 1
 # http://rosalind.info/problems/dna/
 nuce_symbols = ['A', 'C', 'G', 'T']
 with open('rosalind_dna.txt', 'r') as dna_file:

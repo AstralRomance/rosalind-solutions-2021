@@ -1,3 +1,6 @@
+# TASK 3
+# http://rosalind.info/problems/revc/
+
 complementing = {'A':'T', 'C':'G', 'T':'A', 'G':'C'}
 
 with open('rosalind_revc.txt', 'r') as inp_file:

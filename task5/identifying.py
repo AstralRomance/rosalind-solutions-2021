@@ -1,28 +1,26 @@
+# TASK5
+# http://rosalind.info/problems/gc/
+
 source_dict = {}
 current_key = ''
+dna_line = ''
 with open('rosalind_gc.txt', 'r') as inp_f:
     file_string = inp_f.read()
-    temp = ''
-    for line in file_string.splitlines():
-        if ('>' in line):
-            print(line)
-            source_dict[line] = temp
-            temp = ''
-            continue
-        if '>' not in line:
-            temp += line
+file_list = file_string.splitlines()
+for line in file_list[::-1]:
+    if '>' in line:
+        source_dict[line] = dna_line
+        dna_line = ''
+    else:
+        dna_line += line
 
-source_dict.pop('', None)
-#print(source_dict)
+res = ()
+max_err = 0
+for code in source_dict:
+    current_err = (source_dict[code].count('C') + source_dict[code].count('G'))/len(source_dict[code])
+    current_err = current_err*100
+    if current_err > max_err:
+        res = (code, current_err)
+        max_err = current_err
 
-max_error = ()
-current_max_error = 0
-for source_item in source_dict.items():
-    print(source_item)
-    current_error = (sum([source_item[1].count('C'), source_item.count('G')])/len(source_item[1]))*100
-    if current_error>=current_max_error:
-        current_max_error = current_error
-        max_error = (source_item[0], current_max_error) 
-
-print(max_error)
-print(''.join((max_error[0][1::], '\n', str(max_error[1]))))
+print(f'{res[0][1::]}\n{res[1]}')
